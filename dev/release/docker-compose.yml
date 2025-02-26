@@ -4,7 +4,7 @@ services:
     image: spg-registry.cn-hangzhou.cr.aliyuncs.com/spg/openspg-server:latest
     container_name: release-openspg-server
     ports:
-      - "8887:8887"
+      - "8889:8887"
     depends_on:
       - mysql
       - neo4j
@@ -40,7 +40,7 @@ services:
       MYSQL_ROOT_PASSWORD: openspg
       MYSQL_DATABASE: openspg
     ports:
-      - "3306:3306"
+      - "3307:3306"
     command: [
       '--character-set-server=utf8mb4',
       '--collation-server=utf8mb4_general_ci'
@@ -77,7 +77,7 @@ services:
       MINIO_SECRET_KEY: minio@openspg
       TZ: Asia/Shanghai
     ports:
-      - 9000:9000
-      - 9001:9001
+      - 9002:9000
+      - 9003:9001
     volumes:
       - /etc/localtime:/etc/localtime:ro
